@@ -2,10 +2,11 @@ const express = require("express");
 const { connection } = require("./config/db");
 const { authentication } = require("./middleware/Authentication");
 const { UserRoutes } = require("./Routes/User.Routes");
-const { PostRoutes } = require("./Routes/Posts.Routes");
+const {PostRoutes}=require("./Routes/Posts.Routes");
+const cors=require('cors')
 require("dotenv").config()
 const app = express();
-
+app.use(cors({origin:"*"}))
 app.get("/", (req, res) => {
   res.send("Welcome to Homepage");
 });
