@@ -16,7 +16,7 @@ app.use("/posts", PostRoutes);
 app.listen(process.env.PORT, async () => {
   try {
     await connection;
-    console.log("Server is running on port 4500");
+    console.log(`Server is running on port 4500 ${process.env.PORT}`);
   } catch (err) {
     console.log({ error: err.message });
   }
